@@ -13,8 +13,8 @@ return new class extends Migration
             $table->foreignId('vendor_id')->constrained('vendors')->onDelete('cascade');
             $table->foreignId('category_id')->constrained('service_categories')->onDelete('cascade');
             $table->string('title');
-            $table->decimal('price_min', 12, 2);
-            $table->decimal('price_max', 12, 2);
+            $table->decimal('price', 10, 2);
+            $table->decimal('discount', 5, 2);
             $table->string('address');
             $table->text('description')->nullable();
             $table->decimal('latitude', 10, 7)->nullable();

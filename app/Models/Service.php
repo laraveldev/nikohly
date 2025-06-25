@@ -8,8 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'vendor_id', 'category_id', 'title', 'price_min', 'price_max', 'address', 'description', 'latitude', 'longitude', 'created_at', 'updated_at'
+    protected $fillable =
+     [
+        'vendor_id',
+        'category_id',
+        'title',
+        'price',
+        'discount',
+        'address',
+        'description',
+        'latitude',
+        'longitude',
+        'created_at',
+        'updated_at'
+    ];
+    protected $casts = [
+        "price" => "decimal:2",
+        "discount" => "decimal:2",
+        "latitude" => "decimal:8",
+        "longitude" => "decimal:8",
     ];
 
     public function vendor()
