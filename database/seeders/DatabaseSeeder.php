@@ -27,6 +27,11 @@ class DatabaseSeeder extends Seeder
             VendorSeeder::class,
             ServiceCategorySeeder::class,
             GuideTypeSeeder::class,
+            ServiceSeeder::class,
+            ServiceImageSeeder::class,
+            GuideSeeder::class,
+            FavoriteSeeder::class,
+            ServiceCategoryVendorSeeder::class,
         ]);
     }
 }
