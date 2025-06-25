@@ -1,0 +1,787 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/favorites": {
+            "get": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Barcha sevimlilarni olish",
+                "operationId": "d4f073b0b3b1fe48795a798e6f32e99f",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Yangi sevimli qo'shish",
+                "operationId": "8deb669247d78273637f19d6b9245aec",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/favorites/{id}": {
+            "delete": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Sevimlini o‘chirish",
+                "operationId": "90c103e7351b370ead31ae2f59698102",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/guides": {
+            "get": {
+                "tags": [
+                    "Guides"
+                ],
+                "summary": "Barcha guidelarni olish",
+                "operationId": "bccb2a59f783da8a2bb55147f02eb492",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Guides"
+                ],
+                "summary": "Yangi guide yaratish",
+                "operationId": "5880e93f568ec9ae97800f0c8309d11e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/guides/{id}": {
+            "get": {
+                "tags": [
+                    "Guides"
+                ],
+                "summary": "Guideni ko‘rish",
+                "operationId": "1a69d97e8824301789a7ae1ef86560be",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Guides"
+                ],
+                "summary": "Guideni yangilash",
+                "operationId": "1732cd0e2713d10f1206cb5949348c34",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Guides"
+                ],
+                "summary": "Guideni o‘chirish",
+                "operationId": "4db9e44ad877c99e63a8058611baa2f8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/guide-types": {
+            "get": {
+                "tags": [
+                    "GuideTypes"
+                ],
+                "summary": "Barcha guide turlarini olish",
+                "operationId": "8aabd4c95a12b2efc776647178d7ef81",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "GuideTypes"
+                ],
+                "summary": "Yangi guide turi yaratish",
+                "operationId": "511ff03082631134428a6429511ef7c4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/guide-types/{id}": {
+            "get": {
+                "tags": [
+                    "GuideTypes"
+                ],
+                "summary": "Guide turini ko‘rish",
+                "operationId": "1428d64cb8e356a3b56535565a1c8eb2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "GuideTypes"
+                ],
+                "summary": "Guide turini yangilash",
+                "operationId": "e4c30431fab644014c4c30b4786bbc28",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "GuideTypes"
+                ],
+                "summary": "Guide turini o‘chirish",
+                "operationId": "394337a1d0be8eb9bdb9203b8676b282",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/service-categories": {
+            "get": {
+                "tags": [
+                    "ServiceCategories"
+                ],
+                "summary": "Barcha xizmat kategoriyalarini olish",
+                "operationId": "e964fd4617d4e97c4e751d019c5d3f25",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ServiceCategories"
+                ],
+                "summary": "Yangi xizmat kategoriyasi yaratish",
+                "operationId": "6b45ced7ad652d199461c7dc4c86117b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/service-categories/{id}": {
+            "get": {
+                "tags": [
+                    "ServiceCategories"
+                ],
+                "summary": "Xizmat kategoriyasini ko‘rish",
+                "operationId": "1c74f0f907f6854d92da7ff739adfa43",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ServiceCategories"
+                ],
+                "summary": "Xizmat kategoriyasini yangilash",
+                "operationId": "b6d2e25ff1716caa8db1ea2b2e4b4fa9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ServiceCategories"
+                ],
+                "summary": "Xizmat kategoriyasini o‘chirish",
+                "operationId": "34a21cf0f4d2ea6627ecdbf5232a327b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/service-category-vendor": {
+            "get": {
+                "tags": [
+                    "ServiceCategoryVendor"
+                ],
+                "summary": "Barcha vendor-category ulanishlarini olish",
+                "operationId": "fd3152a71ddc6eb7cf6fe9f31a0cd4c7",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ServiceCategoryVendor"
+                ],
+                "summary": "Yangi vendor-category ulanishi yaratish",
+                "operationId": "446be9a1b094e0447b4863c9572ae4d4",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/service-category-vendor/{id}": {
+            "delete": {
+                "tags": [
+                    "ServiceCategoryVendor"
+                ],
+                "summary": "Ulanishni o‘chirish",
+                "operationId": "232a191c8f31b35fd8cd528db3ab7641",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/services": {
+            "get": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Barcha xizmatlarni olish",
+                "operationId": "dd9fa49eb984799a15fc472bf6fb5969",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Yangi xizmat yaratish",
+                "operationId": "c019636ce99faf73705213724085e455",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/services/{id}": {
+            "get": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Xizmatni ko‘rish",
+                "operationId": "993742f57a2eb52737802f8b077c0319",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Xizmatni yangilash",
+                "operationId": "303f9bb5de76c85e4b25683e9a919cb4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Xizmatni o‘chirish",
+                "operationId": "2d04ad98e76301c58f721d97a6fd9b36",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/service-images": {
+            "get": {
+                "tags": [
+                    "ServiceImages"
+                ],
+                "summary": "Barcha xizmat rasmlarini olish",
+                "operationId": "f125aea841e9d07514572367df429900",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ServiceImages"
+                ],
+                "summary": "Yangi xizmat rasmi yaratish",
+                "operationId": "e91d16883ddc38bc68da59b179ffbefd",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/service-images/{id}": {
+            "get": {
+                "tags": [
+                    "ServiceImages"
+                ],
+                "summary": "Xizmat rasmini ko‘rish",
+                "operationId": "498e1dc17b939151822a2e0be5c8c947",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ServiceImages"
+                ],
+                "summary": "Xizmat rasmini yangilash",
+                "operationId": "61ca4f91b6277af44c47de879e89ce66",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ServiceImages"
+                ],
+                "summary": "Xizmat rasmini o‘chirish",
+                "operationId": "1757730e381d4cd9aae73f63a5edaf0c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        },
+        "/vendors": {
+            "get": {
+                "tags": [
+                    "Vendors"
+                ],
+                "summary": "Barcha vendorlarni olish",
+                "operationId": "bc5dff1655a032ec33872d0c1d6b5488",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Vendors"
+                ],
+                "summary": "Yangi vendor yaratish",
+                "operationId": "59c1c72301a690ad44b3ecf229e14989",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/vendors/{id}": {
+            "get": {
+                "tags": [
+                    "Vendors"
+                ],
+                "summary": "Vendorni ko‘rish",
+                "operationId": "0ea12bbb87e0de87de6542d0a9c346b9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Vendors"
+                ],
+                "summary": "Vendorni yangilash",
+                "operationId": "0a9a2db89ac3b5cd23193872e5d01223",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {}
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Vendors"
+                ],
+                "summary": "Vendorni o‘chirish",
+                "operationId": "97e2cc862f79b666353adffa00717028",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Favorites",
+            "description": "Favorite CRUD endpoints"
+        },
+        {
+            "name": "Guides",
+            "description": "Guide CRUD endpoints"
+        },
+        {
+            "name": "GuideTypes",
+            "description": "GuideType CRUD endpoints"
+        },
+        {
+            "name": "ServiceCategories",
+            "description": "ServiceCategory CRUD endpoints"
+        },
+        {
+            "name": "ServiceCategoryVendor",
+            "description": "ServiceCategoryVendor CRUD endpoints"
+        },
+        {
+            "name": "Services",
+            "description": "Service CRUD endpoints"
+        },
+        {
+            "name": "ServiceImages",
+            "description": "ServiceImage CRUD endpoints"
+        },
+        {
+            "name": "Vendors",
+            "description": "Vendor CRUD endpoints"
+        }
+    ]
+}
