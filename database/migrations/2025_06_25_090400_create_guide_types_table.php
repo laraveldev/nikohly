@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('guide_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->timestamps();
         });
     }
     public function down(): void

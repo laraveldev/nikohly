@@ -10,7 +10,7 @@ class ServiceCategory extends Model
     use HasFactory;
     protected $fillable = ['name'];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function services()
     {

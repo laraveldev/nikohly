@@ -10,6 +10,10 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Infolists;
+use Filament\Infolists\Infolist;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -41,10 +45,10 @@ class FavoriteResource extends Resource
                 Tables\Columns\TextColumn::make('service.title')->label('Service'),
                 Tables\Columns\TextColumn::make('created_at')->label('Created At'),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
+                Tables\Actions\ViewAction::make()
+                    ->label('Details')
+                    ->icon('heroicon-o-eye'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
@@ -55,10 +59,28 @@ class FavoriteResource extends Resource
             ]);
     }
 
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Favorite Details')
+                    ->schema([
+                        TextEntry::make('user.name')->label('User'),
+                        TextEntry::make('service.title')->label('Service'),
+                    ]),
+                Section::make('Timestamps')
+                    ->schema([
+                        TextEntry::make('created_at')->label('Created At')->dateTime('Y-m-d H:i'),
+                        TextEntry::make('updated_at')->label('Updated At')->dateTime('Y-m-d H:i'),
+                    ])->columns(2),
+            ]);
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageFavorites::route('/'),
+            'view' => Pages\ViewFavorite::route('/{record}'),
         ];
     }
 }

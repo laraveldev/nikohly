@@ -12,6 +12,7 @@ return new class extends Migration
             $table->foreignId('vendor_id')->constrained('vendors')->onDelete('cascade');
             $table->foreignId('category_id')->constrained('service_categories')->onDelete('cascade');
             $table->unique(['vendor_id', 'category_id']);
+            $table->timestamps();
         });
     }
     public function down(): void

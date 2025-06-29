@@ -13,6 +13,7 @@ return new class extends Migration
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
             $table->string('image_url');
             $table->boolean('is_main')->default(false);
+            $table->timestamps();
         });
     }
     public function down(): void

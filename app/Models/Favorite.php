@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
 {
-    public $timestamps = false;
+    public $timestamps = true;
     protected $fillable = ['user_id', 'service_id', 'created_at'];
 
     public function user()

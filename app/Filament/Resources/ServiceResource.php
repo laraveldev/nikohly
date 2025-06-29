@@ -10,6 +10,10 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Infolists;
+use Filament\Infolists\Infolist;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Section;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -52,10 +56,10 @@ class ServiceResource extends Resource
                 Tables\Columns\TextColumn::make('latitude'),
                 Tables\Columns\TextColumn::make('longitude'),
             ])
-            ->filters([
-                //
-            ])
             ->actions([
+                Tables\Actions\ViewAction::make()
+                    ->label('Details')
+                    ->icon('heroicon-o-eye'),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
@@ -66,10 +70,35 @@ class ServiceResource extends Resource
             ]);
     }
 
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Service Details')
+                    ->schema([
+                        TextEntry::make('title')->label('Title')->weight('bold')->size('lg'),
+                        TextEntry::make('vendor.name')->label('Vendor'),
+                        TextEntry::make('category.name')->label('Category'),
+                        TextEntry::make('price')->label('Price'),
+                        TextEntry::make('discount')->label('Discount'),
+                        TextEntry::make('address')->label('Address'),
+                        TextEntry::make('description')->label('Description')->markdown(),
+                        TextEntry::make('latitude')->label('Latitude'),
+                        TextEntry::make('longitude')->label('Longitude'),
+                    ])->columns(2),
+                Section::make('Timestamps')
+                    ->schema([
+                        TextEntry::make('created_at')->label('Created At')->dateTime('Y-m-d H:i'),
+                        TextEntry::make('updated_at')->label('Updated At')->dateTime('Y-m-d H:i'),
+                    ])->columns(2),
+            ]);
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageServices::route('/'),
+            'view' => Pages\ViewService::route('/{record}'),
         ];
     }
 }
